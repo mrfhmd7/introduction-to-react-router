@@ -6,6 +6,8 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
+import About from './components/About/About.jsx';
+import Contact from './components/Contact/Contact.jsx';
 
 const router = createBrowserRouter([
   {
@@ -14,16 +16,16 @@ const router = createBrowserRouter([
   },
   {
     path: "/about",
-    element: <div>This is about page.</div>
+    element: <About />
   },
   {
     path: "/contact",
-    element: <div>Contact with us.</div>
+    element: <Contact />
   }
 ])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <RouterProvider router={router} />
   </React.StrictMode>,
 )
