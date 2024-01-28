@@ -8,9 +8,9 @@ const Friend = ({ friend }) => {
      
      return (
           <div className='friends'>
-               <h3>{name}</h3>
-               <p>{email}</p>
-               <p>{phone}</p>
+               <h3>Name: {name}</h3>
+               <p>Email: {email}</p>
+               <p>Phone: {phone}</p>
                <p><Link to={`/friend/${id}`}>See more details</Link></p>
           </div>
      );
