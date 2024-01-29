@@ -11,11 +11,13 @@ import Contact from './components/Contact/Contact.jsx';
 import Home from './components/Home/Home.jsx';
 import Friends from './components/Friends/Friends.jsx';
 import FriendDetail from './components/FriendDetail/FriendDetail.jsx';
+import Error from './components/Error/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+    errorElement: <Error/>,
     children: [
       {
         path: "/",
@@ -29,7 +31,7 @@ const router = createBrowserRouter([
       {
         path: "friend/:friendId",
         element: <FriendDetail />,
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
+        loader: ({ params }) => fetch(`https://jsonplaceholder.typicode.com/users/${params.friendId}`)
       }
       ,
       {
@@ -39,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />
-      }
+      },
     ]
   }
 ])
