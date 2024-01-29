@@ -1,19 +1,14 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import './ActiveLink.css';
 
-const ActiveLink = () => {
+const ActiveLink = ({to, children}) => {
      return (
           <NavLink
-               to={`contacts/${contact.id}`}
-               className={({ isActive, isPending }) =>
-                    isActive
-                         ? "active"
-                         : isPending
-                              ? "pending"
-                              : ""
-               }
+               to={to}
+               className={({ isActive }) => isActive ? "active" : ""}
           >
-               {/* other code */}
+               {children}
           </NavLink>
      );
 };
